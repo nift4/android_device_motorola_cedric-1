@@ -36,10 +36,10 @@ on boot
 
 on post-fs-data
     # AK09912 calibration file directory
-    mkdir /data/misc/akmd 0770 system compass
+    mkdir /data/vendor/akmd 0770 system compass
 
     # Sensor Hub calibration data directory
-    mkdir /data/misc/sensorhub 0770 system compass
+    mkdir /data/vendor/sensorhub 0770 system compass
 
     # Setup folder for native to transfer data to NativeDropBoxAgent
     mkdir /data/system/dropbox-add 0730 system diag
