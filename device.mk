@@ -64,6 +64,7 @@ PRODUCT_COPY_FILES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
+    akmd09912 \
     libsensorhub \
     motosh \
     sensorhub.msm8937 \
