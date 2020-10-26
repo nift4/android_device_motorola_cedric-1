@@ -287,8 +287,9 @@ ifeq ($(BOARD_USES_MOT_SENSOR_HUB), true)
         LOCAL_STATIC_LIBRARIES := AK09912
 
         LOCAL_FORCE_STATIC_EXECUTABLE := false
-        LOCAL_SHARED_LIBRARIES := libc libm libutils libcutils liblog
-
+        LOCAL_HEADER_LIBRARIES += libhardware_headers
+        LOCAL_SHARED_LIBRARIES := libc libm libutils libcutils liblog libhardware
+        LOCAL_VENDOR_MODULE := true
         include $(BUILD_EXECUTABLE)
 
         include $(CLEAR_VARS)
@@ -298,6 +299,7 @@ ifeq ($(BOARD_USES_MOT_SENSOR_HUB), true)
         LOCAL_MODULE_SUFFIX := .a
         LOCAL_SRC_FILES_arm   := $(AKM_PATH)/$(SMARTCOMPASS_LIB)/arm/libAK09912.a
         LOCAL_SRC_FILES_arm64 := $(AKM_PATH)/$(SMARTCOMPASS_LIB)/arm64/libAK09912.a
+        LOCAL_VENDOR_MODULE := true
         include $(BUILD_PREBUILT)
     endif # MOT_SENSOR_HUB_HW_AK09912
 
